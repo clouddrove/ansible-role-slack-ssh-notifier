@@ -84,7 +84,7 @@ Followiing things includes in this role:
 
 ```yaml
 - hosts: localhost
-  remote_user: ubuntu
+  remote_user: root
   become: true
   roles:
     - clouddrove.ansible_role_slack_ssh_notifier
