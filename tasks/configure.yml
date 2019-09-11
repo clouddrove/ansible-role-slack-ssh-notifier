@@ -1,0 +1,18 @@
+---
+
+- name: create slack ssh notifier dirs
+  file:
+    path: "{{ item|safe|trim }}"
+    state: directory
+    mode: 0755
+  changed_when: false
+  with_items:
+    - "{{ dir_path }}"
+
+- name: Create slack ssh notifier script
+  template:
+    dest: "{{ dir_path }}/ssh_alert.sh"
+    mode: +x
+    src: "{{ item }}"
+  with_items:
+    - config/ssh_alert.sh.j2
