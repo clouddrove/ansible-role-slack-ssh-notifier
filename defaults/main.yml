@@ -1,7 +1,7 @@
 ---
 
 # Slack Notification Variables
-channel: "testing"
-hostname: "testing"
-webhook_url: "https://hooks.slack.com/services/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"
+channel: ""                          # Name of Slack Channel
+hostname: ""                         # Hostname
+webhook_url: ""                      # url of Slack Webhook
 dir_path: "/opt/slack-ssh-notifier"
