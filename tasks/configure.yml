@@ -1,7 +1,7 @@
 ---
 
-- name: create slack ssh notifier dirs
-  file:
+- name: Create slack ssh notifier dirs
+  ansible.builtin.file:
     path: "{{ item|safe|trim }}"
     state: directory
     mode: 0755
@@ -10,7 +10,7 @@
     - "{{ dir_path }}"
 
 - name: Create slack ssh notifier script
-  template:
+  ansible.builtin.template:
     dest: "{{ dir_path }}/ssh_alert.sh"
     mode: +x
     src: "{{ item }}"

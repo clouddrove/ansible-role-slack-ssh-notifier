@@ -1,5 +1,6 @@
 ---
 
-- name: run slack ssh notifier script
-  shell: echo "session required pam_exec.so {{ dir_path }}/ssh_alert.sh" >> /etc/pam.d/sshd
+- name: Run slack ssh notifier script
+  ansible.builtin.shell:
+    cmd: echo "session required pam_exec.so {{ dir_path }}/ssh_alert.sh" >> /etc/pam.d/sshd
   changed_when: false
